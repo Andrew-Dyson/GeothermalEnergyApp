@@ -14,12 +14,14 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 @app.route('/graphdata')
 def get_graph():
     print(f"request received")
-    return {"image": "Images/TestImage2.png"}
+    return {"image": "Images/TestImage1.png"}
 
 @app.route('/graphdata', methods=['POST'])
 def create_graph():
-    print(request.json["temperature"])
-    createScatterPlot(3,2)
+    print(request.json["depth"])
+    temperature = request.json["temperature"]
+    depth = request.json["depth"]
+    createScatterPlot(temperature, depth)
     return {"image": "Images/TestImage1.png"}
 
 # @children_blueprint.route("/children", methods=['POST'])

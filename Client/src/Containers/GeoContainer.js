@@ -6,16 +6,14 @@ import GraphService from '../Services/GraphService';
 const GeoContainer = () => {
   const [plotImage, setPlotImage] = useState("");
 
-  // useEffect(() => {
-  //   fetchGraph()
-  // }, []);
+  useEffect(() => {
+    fetch('http://127.0.0.1:5000/graphdata')
+      .then(res => res.json())
+      .then(data => setPlotImage(data.image))
+  }, [plotImage]);
 
-  // const fetchGraph = () => {
-  //    setPlotImage(GraphService.getGraph()
-  //    .then(data => setPlotImage(data.image)))
-  // }
 
-  const createGraph = (geoData) => {
+  function createGraph(geoData) {
     // console.log(geoData)
     GraphService.addGraph(geoData)
     .then(data => setPlotImage(data.image))
