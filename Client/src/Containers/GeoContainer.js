@@ -14,10 +14,8 @@ const GeoContainer = () => {
 
 
   function createGraph(geoData) {
-    // console.log(geoData)
     GraphService.addGraph(geoData)
     .then(data => setPlotImage(data.image))
-
     // .then(data => console.log(data.image))
     }
 
