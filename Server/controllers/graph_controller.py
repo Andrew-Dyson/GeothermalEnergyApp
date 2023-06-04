@@ -1,5 +1,11 @@
-from flask import Flask 
+import matplotlib
+matplotlib.use('agg')
+import matplotlib.pyplot as plt
+import numpy as np
+from flask import Flask, request
 from flask_cors import CORS
+from graphs.scatterplot import *
+
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -12,9 +18,9 @@ def get_graph():
 
 @app.route('/graphdata', methods=['POST'])
 def create_graph():
-    print(f"request received")
-    return {"image": "Images/TestImage3.png"}
-
+    print(request.json["temperature"])
+    createScatterPlot(3,2)
+    return {"image": "Images/TestImage1.png"}
 
 # @children_blueprint.route("/children", methods=['POST'])
 # def register_child():

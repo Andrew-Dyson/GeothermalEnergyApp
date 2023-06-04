@@ -23,17 +23,6 @@ const HandleDepthChange = (ev) => {
     console.log(ev.target.value)
 }
 
-//     const handleSubmit = ev => {
-//       ev.preventDefault();
-//       addBooking({
-//         name: name,
-//         email: email,
-//         checked_in: checkedIn
-//       });
-//       setName("");
-//       setEmail("");
-//       setCheckedIn(false);
-//     }
 
   return (
     <div>
