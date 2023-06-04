@@ -16,13 +16,22 @@ const GeoContainer = () => {
      .then(data => setPlotImage(data.image)))
   }
 
+  const createGraph = (geoData) => {
+    // return console.log(geoData)
+    GraphService.addGraph(geoData)
+    // .then(data => setPlotImage(data.image))
+    .then(data => console.log(data.image))
+    }
+
+  
+
   // const changeImageSrc = () => {
   //   setPlotImage('new-image-src.jpg');
   // }
 
   return (
     <div>
-      <GraphInputForm/>
+      <GraphInputForm createGraph={createGraph}/>
       <Graph plotImage={plotImage}/>
     </div>
   );
