@@ -15,9 +15,7 @@ const GraphService = {
             'Content-Type': 'application/json'
             }
         })
-            .then(res => res.json());
+            .then(res => res.json())
     }
-
-
 }
 export default GraphService;
