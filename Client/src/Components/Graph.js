@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Graph = ({plotImage}) => {
+const Graph = ({plotImage, data}) => {
 
     const createImagePath = (inputImage) => {
         const imagePath = "Images/" + inputImage
@@ -10,7 +10,8 @@ const Graph = ({plotImage}) => {
   return (
     <div>
       {/* <img src={createImagePath(plotImage)} alt="" /> */}
-      <img src="Images/TestImage1.png" alt="" />
+      {/* <img src="Images/TestImage1.png" alt="" /> */}
+      {data}
     </div>
   );
 }

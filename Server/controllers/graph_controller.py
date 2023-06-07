@@ -12,10 +12,10 @@ import repositories.depth_repository as depth_repository
 
 graph_blueprint = Blueprint("graphdata", __name__)
 
-@graph_blueprint.route('/graphdata')
-def get_graph():
-    print(f"request received")
-    return {"image": "TestImage1.png"}
+# @graph_blueprint.route('/graphdata')
+# def get_graph():
+#     print(f"request received")
+#     return {"image": "TestImage1.png"}
 
 @graph_blueprint.route('/graphdata', methods=['POST'])
 def create_graph():
@@ -32,7 +32,7 @@ def create_graph():
     return {"image": "TestImage1.png"}
     # return redirect("/graphdata")
 
-@graph_blueprint.route('/data')
+@graph_blueprint.route('/graphdata')
 def get_data():
     data = depth_repository.select_all()
     print(f"data request received")
