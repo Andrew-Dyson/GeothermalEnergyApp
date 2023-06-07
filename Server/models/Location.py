@@ -1,8 +1,8 @@
 
 
 class Location:
-    def __init__(self, name, elevation, id = None):
+    def __init__(self, name, region, id = None):
         self.name = name
-        self.elevation = elevation
+        self.region = region
         self.depths = []
         self.id = id

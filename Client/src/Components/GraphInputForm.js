@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 const GraphInputForm = ({createGraph}) => {
     const [name, setName] = useState("")
-    const [elevation, setElevation] = useState("")
+    const [region, setRegion] = useState("")
     const [temperature, setTemperature] = useState("")
     const [depth, setDepth] = useState("")
     
@@ -12,7 +12,7 @@ const GraphInputForm = ({createGraph}) => {
         // ev.preventDefault();
         createGraph({
             name: name, 
-            elevation: elevation,
+            region: region,
             temperature: temperature,
             depth: depth
         })
@@ -25,8 +25,8 @@ const GraphInputForm = ({createGraph}) => {
     const handleNameChange = (ev) => {
         setName(ev.target.value)
     }
-    const handleElevationChange = (ev) => {
-        setElevation(ev.target.value)
+    const handleRegionChange = (ev) => {
+        setRegion(ev.target.value)
     }
     const handleTempChange = (ev) => {
         setTemperature(ev.target.value)
@@ -40,8 +40,8 @@ const GraphInputForm = ({createGraph}) => {
       <form>
         <label htmlFor="name">Location name:</label>
         <input  type="text" id="name" onChange={handleNameChange}/>
-        <label htmlFor="elevation">Elevation:</label>
-        <input  type="text" id="elevation" onChange={handleElevationChange}/>
+        <label htmlFor="elevation">Region:</label>
+        <input  type="text" id="region" onChange={handleRegionChange}/>
         <label htmlFor="temperature">Temperature:</label>
         <input  type="text" id="temperature" onChange={handleTempChange}/>
         <label htmlFor="depth">Depth:</label>

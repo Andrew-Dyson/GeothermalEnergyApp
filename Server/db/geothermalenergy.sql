@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS depths;
 CREATE TABLE locations (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    elevation INT
+    region VARCHAR(255)
 );
 
 CREATE TABLE depths (
