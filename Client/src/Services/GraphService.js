@@ -8,7 +8,8 @@ const GraphService = {
 
     addGraph(graphData){
         // console.log("create graph")
-        return fetch('http://127.0.0.1:5000/graphdata', {
+        // console.log(graphData)
+        return fetch('http://127.0.0.1:5000/data', {
             method: 'POST',
             body: JSON.stringify(graphData),
             headers: {
@@ -16,6 +17,17 @@ const GraphService = {
             }
         })
             .then(res => res.json())
+    },
+
+    addGraphWithLocation(graphData){
+        return fetch('http://127.0.0.1:5000/data/locations/location', {
+            method: 'POST',
+            body: JSON.stringify(graphData),
+            headers: {
+            'Content-Type': 'application/json'
+            }
+        })
+            .then(res => console.log(res.json()))
     }
 }
 export default GraphService;

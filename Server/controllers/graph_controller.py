@@ -33,7 +33,7 @@ def create_graph():
     # return redirect("/graphdata")
 
 @graph_blueprint.route('/data/depths')
-def get_depth_data():
+def get_all_depth_data():
     data = depth_repository.select_all()
     print(f"depth data request received")
     depths = []
@@ -48,7 +48,7 @@ def get_depth_data():
     return depths
 
 @graph_blueprint.route('/data/locations')
-def get_location_data():
+def get_all_location_data():
     data = location_repository.select_all()
     locations = []
     for location_object in data:
@@ -59,6 +59,13 @@ def get_location_data():
         )
     return locations
 
+@graph_blueprint.route('/data/locations/location', methods=['POST'])
+def get_specific_location_data():
+    print(print(request.json["location_id"]))
+    location_id = request.json["location_id"]
+    depth_data = depth_repository.select_by_location_id(location_id)
+    createScatterPlot(int(depth_data.temperature), int(depth_data.value), depth_data.location.name)
+    return depth_data.location.name
 
 
 # @app.route('/graphdata/id')

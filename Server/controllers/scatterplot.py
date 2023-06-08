@@ -3,13 +3,15 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 
-def createScatterPlot(x,y):
+def createScatterPlot(x,y, name_for_title):
+    plt.clf()
+    plt.cla()
     x_ = np.array([x])
     y_ = np.array([y])
     colors = np.array(["green"])
     scatter = plt.scatter(x_, y_, c=colors)
-    
-    plt.title('Temperature vs. Depth', fontsize=15, fontweight='bold')
+    # plt.title('Temperature vs. Depth', fontsize=15, fontweight='bold')
+    plt.title(f'{name_for_title}: Temperature vs. Depth', fontsize=15, fontweight='bold')
     plt.xlabel('Temperature (degrees c)', fontsize=15, fontweight='bold', labelpad=5)
     plt.ylabel('Depth (m)', fontsize=15, fontweight='bold', labelpad=5)
     
