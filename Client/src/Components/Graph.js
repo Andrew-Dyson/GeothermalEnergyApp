@@ -10,7 +10,7 @@ const Graph = ({plotImage, data}) => {
   return (
     <div>
       {/* <img src={createImagePath(plotImage)} alt="" /> */}
-      {/* <img src="Images/TestImage1.png" alt="" /> */}
+      
       {data}
     </div>
   );

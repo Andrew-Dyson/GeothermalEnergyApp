@@ -37,6 +37,7 @@ const GeoContainer = () => {
   return (
     <div>
     <GraphInputForm createGraph={createGraph}/>
+    <img src="Images/TestImage1.png" alt="" />
     <ul>
       <GraphList inputData={inputData} plotImage={plotImage}/>
     </ul>

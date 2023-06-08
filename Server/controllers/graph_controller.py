@@ -10,14 +10,14 @@ from models.depth import *
 import repositories.location_repository as location_repository
 import repositories.depth_repository as depth_repository
 
-graph_blueprint = Blueprint("graphdata", __name__)
+graph_blueprint = Blueprint("data", __name__)
 
 # @graph_blueprint.route('/graphdata')
 # def get_graph():
 #     print(f"request received")
 #     return {"image": "TestImage1.png"}
 
-@graph_blueprint.route('/graphdata', methods=['POST'])
+@graph_blueprint.route('/data', methods=['POST'])
 def create_graph():
     print(request.json["name"])
     name = request.json["name"]
@@ -32,20 +32,33 @@ def create_graph():
     return {"image": "TestImage1.png"}
     # return redirect("/graphdata")
 
-@graph_blueprint.route('/graphdata')
-def get_data():
+@graph_blueprint.route('/data/depths')
+def get_depth_data():
     data = depth_repository.select_all()
-    print(f"data request received")
-    depth_data = []
+    print(f"depth data request received")
+    depths = []
     for depth_object in data:
-        depth_data.append(
+        depths.append(
             {"depth_id": depth_object.id,
             "depth_value": depth_object.value,
             "temperature_value": depth_object.temperature,
             "depth_location_id": depth_object.location}
         )
     # print(depth_data)
-    return depth_data
+    return depths
+
+@graph_blueprint.route('/data/locations')
+def get_location_data():
+    data = location_repository.select_all()
+    locations = []
+    for location_object in data:
+        locations.append(
+            {"location_id": location_object.id,
+            "location_name": location_object.name,
+            "region": location_object.region}
+        )
+    return locations
+
 
 
 # @app.route('/graphdata/id')
