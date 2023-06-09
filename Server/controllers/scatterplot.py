@@ -6,8 +6,8 @@ import numpy as np
 def createScatterPlot(x,y, name_for_title):
     plt.clf()
     plt.cla()
-    x_ = np.array([x])
-    y_ = np.array([y])
+    x_ = np.array(x)
+    y_ = np.array(y)
     colors = np.array(["green"])
     scatter = plt.scatter(x_, y_, c=colors)
     # plt.title('Temperature vs. Depth', fontsize=15, fontweight='bold')
@@ -18,7 +18,7 @@ def createScatterPlot(x,y, name_for_title):
     plt.grid()
     plt.xscale("linear")
     plt.yscale("linear")
-    plt.plot([x, 10],[y, 0])
+    plt.plot([10, 85],[0, 3000])
     
     ax = scatter.axes
     

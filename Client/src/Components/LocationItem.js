@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
+
 const LocationItem = ({locationObject}) => {
 
-
+    if (!locationObject) return null
 
   return (
     <>

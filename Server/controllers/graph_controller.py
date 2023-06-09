@@ -61,13 +61,36 @@ def get_all_location_data():
 
 @graph_blueprint.route('/data/locations/location', methods=['POST'])
 def get_specific_location_data():
-    print(print(request.json["location_id"]))
+    print(request.json["location_id"])
     location_id = request.json["location_id"]
     depth_data = depth_repository.select_by_location_id(location_id)
     createScatterPlot(int(depth_data.temperature), int(depth_data.value), depth_data.location.name)
-    return depth_data.location.name
+    # return depth_data.location.name
+    return {"message": "location request received"}
+   
+
+@graph_blueprint.route('/data/locations/region', methods=['POST'])
+def get_specific_region_data():
+    print(request.json["Region_name"])
+    region_to_find = request.json["Region_name"]
+    depth_data = depth_repository.select_by_region(region_to_find)
+    temperature_list = return_temperature_data(depth_data)
+    depth_list = return_depth_data(depth_data)
+   
+    createScatterPlot(temperature_list, depth_list, region_to_find)
+    return {"message": "region request received"}
+    
+
+@graph_blueprint.route('/data/locations/alllocationsbyregion')
+def get_all_locations_by_region():
+    print("all locations by region request received")
+    # region_to_find = request.json["Region_name"]
+    # depth_data = depth_repository.select_by_region(region_to_find)
+    # temperature_list = return_temperature_data(depth_data)
+    # depth_list = return_depth_data(depth_data)
+   
+    # createScatterPlot(temperature_list, depth_list, region_to_find)
+    return {"message": "plot all locations by region - request received"}
+    
 
 
-# @app.route('/graphdata/id')
-# def create_graph():
-#     print(f"request received")

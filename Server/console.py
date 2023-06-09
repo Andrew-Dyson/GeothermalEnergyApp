@@ -8,14 +8,14 @@ import repositories.depth_repository as depth_repository
 # print(location.region)
 # print(location.id)
 
-depth = depth_repository.select_by_location_id(7)
-print(depth.value)
-print(depth.temperature)
-print(depth.location.name)
-print(depth.id)
+# depth = depth_repository.select_by_location_id(7)
+# print(depth.value)
+# print(depth.temperature)
+# print(depth.location.name)
+# print(depth.id)
 
-
-
+depths_Caithness = depth_repository.select_by_region("Caithness")
+print(depths_Caithness[3].location)
 
 
 # Altnabreac_1 = Location("Altnabreac_1", "Caithness")

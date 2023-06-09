@@ -2,6 +2,7 @@ import Graph from './Graph';
 import LocationItem from './LocationItem';
 
 
+
 const LocationList = ({locationData, createGraphWithLocation}) => {
     const locationItems = locationData.map(location => {
         return <LocationItem

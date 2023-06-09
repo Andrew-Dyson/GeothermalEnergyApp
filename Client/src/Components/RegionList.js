@@ -1,24 +1,26 @@
 import Graph from './Graph';
-import RegionItem from './LocationItem';
+import RegionItem from './RegionItem';
 
 
-const RegionList = ({locationData}) => {
-    const locationItems = locationData.map(location => {
-        return <LocationItem
-        key={location.location_id}
-        locationObject={location}
-        ></LocationItem>
+const RegionList = ({regions, createGraphWithRegion}) => {
+    const regionItems = regions.map(region => {
+        return <RegionItem
+        key={region.region_id}
+        regionObject={region}
+        ></RegionItem>
     });
 
-
+const handleRegionSelect = (ev) => {
+    console.log(ev.target.value)
+    createGraphWithRegion({
+        Region_name: ev.target.value
+    })
+}
 
     return(
-        // <div>
-        // <select onSelect={handleLocationSelect}>{locationItems}</select>
-        // <form>
-        // <input type="button" name="submit" value="Submit location" onClick={handleLocationSubmit}/>
-        // </form>
-        // </div>
+        <div>
+        <select onChange={handleRegionSelect}>{regionItems}</select>
+        </div>
     )
 }
 

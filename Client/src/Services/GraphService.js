@@ -1,4 +1,4 @@
-// const baseURL = 'http://localhost:5000/graphdata';
+
 
 const GraphService = {
     // getGraph(){
@@ -21,6 +21,17 @@ const GraphService = {
 
     addGraphWithLocation(graphData){
         return fetch('http://127.0.0.1:5000/data/locations/location', {
+            method: 'POST',
+            body: JSON.stringify(graphData),
+            headers: {
+            'Content-Type': 'application/json'
+            }
+        })
+            .then(res => console.log(res.json()))
+    },
+
+    addGraphWithRegion(graphData){
+        return fetch('http://127.0.0.1:5000/data/locations/region', {
             method: 'POST',
             body: JSON.stringify(graphData),
             headers: {

@@ -1,6 +1,8 @@
 from db.run_sql import run_sql
 from models.location import *
+from models.depth import *
 import repositories.depth_repository as depth_repository
+import repositories.location_repository as location_repository
 
 def save(location):
     sql = "INSERT INTO locations(name, region) VALUES (%s, %s) RETURNING *"
@@ -28,3 +30,4 @@ def select_by_id(location_id):
         result = results[0]
         location = Location(result['name'], result['region'], result['id'] )
     return location
+
