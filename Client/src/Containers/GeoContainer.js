@@ -77,8 +77,21 @@ const GeoContainer = () => {
     .then(data => console.log(data.image))
     }
 
-  function createGraphWithLocation(geoData) {
-    GraphService.addGraphWithLocation(geoData)
+    function createGraphWithLocation(geoData) {
+      GraphService.addGraphWithLocation(geoData)
+      .then(data => {
+        console.log(data)
+        // setPlotImage(data.image)
+      })
+      .then(data => console.log(data))
+      }
+
+
+  function createGraphAllLocationsByRegion() {
+    let regions = []
+    regions = getRegions()
+  
+    GraphService.addGraphWithLocationsByRegion(regions)
     .then(data => {
       console.log(data)
       // setPlotImage(data.image)
@@ -95,20 +108,6 @@ const GeoContainer = () => {
     }
 
 
-  function createGraphAllLocationsByRegion() {
-      fetch('http://127.0.0.1:5000/data/locations/alllocationsbyregion')
-        .then(res => res.json())
-        .then(data => console.log(data))
-    }
-
-
-  // function createGraphAllLocationsByRegion(request) {
-  //   GraphService.addGraphWithAllLocationsByRegion(request)
-  //   .then(data => {
-  //     console.log(data)
-  //   })
-  //   .then(data => console.log(data))
-  // }
 
   return (
     <div>

@@ -39,6 +39,17 @@ const GraphService = {
             }
         })
             .then(res => console.log(res.json()))
+    },
+
+    addGraphWithLocationsByRegion(list_of_regions){
+        return fetch('http://127.0.0.1:5000/data/locations/alllocationsbyregion', {
+            method: 'POST',
+            body: JSON.stringify(list_of_regions),
+            headers: {
+            'Content-Type': 'application/json'
+            }
+        })
+            .then(res => console.log(res.json()))
     }
 }
 export default GraphService;

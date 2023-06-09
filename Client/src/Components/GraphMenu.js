@@ -6,9 +6,7 @@ const GraphMenu = ({createGraphAllLocationsByRegion}) => {
 
     const handleSubmit = (ev) => {
         // ev.preventDefault();
-        createGraphAllLocationsByRegion({
-            request: ev.target.value 
-        })
+        createGraphAllLocationsByRegion()
     }
 
     
