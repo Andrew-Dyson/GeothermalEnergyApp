@@ -5,6 +5,7 @@ import GraphService from '../Services/GraphService';
 import LocationList from '../Components/LocationList';
 import RegionList from '../Components/RegionList';
 import GraphMenu from '../Components/GraphMenu';
+import ResourceCalc from '../Components/ResourceCalc';
 
 const GeoContainer = () => {
   const [plotImage, setPlotImage] = useState(null);
@@ -120,6 +121,7 @@ const GeoContainer = () => {
     </ul>
       <GraphMenu createGraphAllLocationsByRegion={createGraphAllLocationsByRegion}/>
       <GraphInputForm createGraph={createGraph}/>
+      <ResourceCalc/>
     </div>
   );
 }
