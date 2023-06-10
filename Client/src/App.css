@@ -1,1 +1,17 @@
+/* 
+* {
+  margin: 0;
+  padding: 0;
+} */
 
+body {
+  background-image: url('Images/IMG_0428.JPG');
+  /* background-position: center;  */
+  background-repeat: no-repeat; 
+  background-size: cover;
+ }
+
+ header {
+  background-color: rgb(255, 255, 255);
+  height: 50px;
+ }

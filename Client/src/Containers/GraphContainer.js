@@ -4,10 +4,10 @@ import GraphInputForm from '../Components/GraphInputForm';
 import GraphService from '../Services/GraphService';
 import LocationList from '../Components/LocationList';
 import RegionList from '../Components/RegionList';
-import GraphMenu from '../Components/GraphMenu';
-import ResourceCalc from '../Components/ResourceCalc';
+import PlotByRegionButton from '../Components/PlotByRegionButton';
 
-const GeoContainer = () => {
+
+const GraphContainer = () => {
   const [plotImage, setPlotImage] = useState(null);
   // const [inputData, setInputData] = useState([]);
   const [locationData, setLocationData] = useState([]);
@@ -112,18 +112,17 @@ const GeoContainer = () => {
 
   return (
     <div>
-    <img src="Images/TestImage1.png" alt="" />
+    <img src="Images/TestImage1.png" alt="Image of outputted graph" />
     <ul>
       <LocationList locationData={locationData} createGraphWithLocation={createGraphWithLocation}/>
     </ul>
     <ul>
       <RegionList regions={regions} createGraphWithRegion={createGraphWithRegion}/>
     </ul>
-      <GraphMenu createGraphAllLocationsByRegion={createGraphAllLocationsByRegion}/>
+      <PlotByRegionButton createGraphAllLocationsByRegion={createGraphAllLocationsByRegion}/>
       <GraphInputForm createGraph={createGraph}/>
-      <ResourceCalc/>
     </div>
   );
 }
 
-export default GeoContainer;
+export default GraphContainer;

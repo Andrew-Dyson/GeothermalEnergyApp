@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import ResourceCalcInput from '../Components/ResourceCalcInput';
 import ResourceCalcOutput from '../Components/ResourceCalcOutput';
 
-const ResourceCalc = () => {
+
+const ResCalcContainer = () => {
     const [heatInPlaceCalcResult, setHeatInPlaceCalcResult] = useState(null);
     const [energyDemand, setEnergyDemand] = useState(null);
     const [difference, setDifference] = useState(null);
@@ -40,7 +41,7 @@ const ResourceCalc = () => {
     }
 
     return(
-        <>
+        <div>
         <ResourceCalcInput 
         calculateHeatInPlace={calculateHeatInPlace}/>
         <ResourceCalcOutput 
@@ -48,9 +49,9 @@ const ResourceCalc = () => {
         energyDemand={energyDemand}
         difference={difference}
         />
-        </>
+        </div>
     )
 
 }
 
-export default ResourceCalc;
+export default ResCalcContainer;

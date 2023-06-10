@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-const GraphMenu = ({createGraphAllLocationsByRegion}) => {
+const PlotByRegionButton = ({createGraphAllLocationsByRegion}) => {
     
 
     const handleSubmit = (ev) => {
@@ -20,4 +20,4 @@ const GraphMenu = ({createGraphAllLocationsByRegion}) => {
   );
 }
 
-export default GraphMenu;
+export default PlotByRegionButton;

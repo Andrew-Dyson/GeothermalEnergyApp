@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import GeoContainer from './Containers/GeoContainer';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import GraphContainer from './Containers/GraphContainer';
+import ResCalcContainer from './Containers/ResCalcContainer';
+import NavBar from './Containers/NavBar';
+import './App.css';
 
 
 function App() {
   return (
-    <div>
-      <GeoContainer/>
-    </div>
+      <Router>
+          <NavBar/>
+          <Routes>
+            <Route path="/data-plotting" element={< GraphContainer />} />
+            <Route path="/resource-calculator" element={< ResCalcContainer />} />
+          </Routes>
+      </Router>
   );
 }
 
