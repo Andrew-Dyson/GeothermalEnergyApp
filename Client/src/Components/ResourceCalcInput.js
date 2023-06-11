@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './ResourceCalcInput.css'
 
 
 const ResourceCalcInput = ({calculateHeatInPlace}) => {
@@ -64,26 +65,46 @@ const ResourceCalcInput = ({calculateHeatInPlace}) => {
 
     return(
         <>
-        <form>
+        <form className="UserCalcInputs">
+            <div className="CalcInputItem">
             <label htmlFor="thickness">Thickness:</label>
             <input  type="text" id="thickness" onChange={handleThicknessChange}/>
+            </div>
+            <div className="CalcInputItem">
             <label htmlFor="area">Area:</label>
             <input  type="text" id="area" onChange={handleAreaChange}/>
+            </div>
+            <div className="CalcInputItem">
             <label htmlFor="porosity">Porosity:</label>
             <input  type="text" id="porosity" onChange={handlePorosityChange}/>
+            </div>
+            <div className="CalcInputItem">
             <label htmlFor="fluid_specific_density">Fluid specific density:</label>
             <input  type="text" id="fluid_specific_density" onChange={handleFlSpecDenChange}/>
+            </div>
+            <div className="CalcInputItem">
             <label htmlFor="rock_specific_density">Rock specific density:</label>
             <input  type="text" id="rock_specific_density" onChange={handleRockSpecDenChange}/>
+            </div>
+            <div className="CalcInputItem">
             <label htmlFor="fluid_specific_heat_capacity">Fluid specific heat capacity:</label>
             <input  type="text" id="fluid_specific_heat_capacity" onChange={handleFlSpecHeatCapChange}/>
+            </div>
+            <div className="CalcInputItem">
             <label htmlFor="rock_specific_heat_capacity">Rock specific heat capacity:</label>
             <input  type="text" id="rock_specific_heat_capacity" onChange={handleRockSpecHeatCapChange}/>
+            </div>
+            <div className="CalcInputItem">
             <label htmlFor="reservoir_temperature">Reservoir Temperature:</label>
             <input  type="text" id="reservoir_temperature" onChange={handleResTempChange}/>
+            </div>
+            <div className="CalcInputItem">
             <label htmlFor="demand">Demand:</label>
             <input  type="text" id="demand" onChange={handleDemandChange}/>
+            </div>
+            <div className="CalcInputItem">
             <input type="button" name="submit" value="Calculate" onClick={handleSubmit}/>
+            </div>
         </form>
         </>
     )
