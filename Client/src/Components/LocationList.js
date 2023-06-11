@@ -1,6 +1,6 @@
 import Graph from './Graph';
 import LocationItem from './LocationItem';
-
+import './LocationList.css'
 
 
 const LocationList = ({locationData, createGraphWithLocation}) => {
@@ -22,7 +22,7 @@ const handleLocationSelect = (ev) => {
 
     return(
         <div>
-        <select onChange={handleLocationSelect}>{locationItems}</select>
+        <select className="InputItem" onChange={handleLocationSelect}>{locationItems}</select>
         </div>
     )
 }

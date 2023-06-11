@@ -1,6 +1,6 @@
 import Graph from './Graph';
 import RegionItem from './RegionItem';
-
+import './RegionList.css'
 
 const RegionList = ({regions, createGraphWithRegion}) => {
     const regionItems = regions.map(region => {
@@ -19,7 +19,7 @@ const handleRegionSelect = (ev) => {
 
     return(
         <div>
-        <select onChange={handleRegionSelect}>{regionItems}</select>
+        <select className="InputItem" onChange={handleRegionSelect}>{regionItems}</select>
         </div>
     )
 }

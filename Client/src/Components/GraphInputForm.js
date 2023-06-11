@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './GraphInputForm.css'
 
 
 const GraphInputForm = ({createGraph}) => {
@@ -37,16 +38,26 @@ const GraphInputForm = ({createGraph}) => {
 
   return (
     <div>
-      <form>
+      <form className="UserGraphInputs">
+        <div className="InputItem">
         <label htmlFor="name">Location name:</label>
         <input  type="text" id="name" onChange={handleNameChange}/>
+        </div>
+        <div className="InputItem">
         <label htmlFor="elevation">Region:</label>
         <input  type="text" id="region" onChange={handleRegionChange}/>
+        </div>
+        <div className="InputItem">
         <label htmlFor="temperature">Temperature:</label>
         <input  type="text" id="temperature" onChange={handleTempChange}/>
+        </div>
+        <div className="InputItem">
         <label htmlFor="depth">Depth:</label>
         <input  type="text" id="depth" onChange={handleDepthChange}/>
+        </div>
+        <div className="InputItem">
         <input type="button" name="submit" value="Create Graph" onClick={handleSubmit}/>
+        </div>
       </form>
     </div>
   );

@@ -1,5 +1,38 @@
 .NavBar {
     background-color: rgb(255, 255, 255);
-    
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    opacity: 1;
+    box-shadow: 7px 7px 5px rgba(34, 34, 34, 0.5);
+}
 
+.NavBar > h1 {
+    color:rgb(183, 40, 40)
+
+}
+
+.NavBar > ul {
+    display: flex;
+    list-style: none;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+
+  .NavBar > ul > li > Link  {
+    color: rgb(5, 0, 0);
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding-left: 0px;
+    padding-right: 15px;
+}
+
+.NavLink {
+    color: rgb(5, 0, 0);
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding-left: 0px;
+    padding-right: 15px;
 }

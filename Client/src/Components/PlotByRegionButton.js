@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import './PlotByRegionButton.css'
 
 const PlotByRegionButton = ({createGraphAllLocationsByRegion}) => {
     
@@ -14,7 +14,7 @@ const PlotByRegionButton = ({createGraphAllLocationsByRegion}) => {
   return (
     <div>
       <form>
-        <input type="button" name="submit" value="Plot all locations by region" onClick={handleSubmit}/>
+        <input className="RegionsInputItem" type="button" name="submit" value="Plot all locations by region" onClick={handleSubmit}/>
       </form>
     </div>
   );

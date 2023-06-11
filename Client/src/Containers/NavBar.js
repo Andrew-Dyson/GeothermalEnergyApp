@@ -9,10 +9,10 @@ const NavBar = () => {
     <h1>GeothermViewer</h1>
     <ul>
       <li>
-        <Link to="/data-plotting">Data Plotting</Link>
+        <Link className="NavLink" to="/data-plotting">Data Plotting</Link>
       </li>
       <li>
-        <Link to="/resource-calculator">Resource Calculator</Link>
+        <Link className="NavLink" to="/resource-calculator">Resource Calculator</Link>
       </li>
     </ul>
     </div>

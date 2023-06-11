@@ -5,7 +5,7 @@ import GraphService from '../Services/GraphService';
 import LocationList from '../Components/LocationList';
 import RegionList from '../Components/RegionList';
 import PlotByRegionButton from '../Components/PlotByRegionButton';
-
+import './GraphContainer.css'
 
 const GraphContainer = () => {
   const [plotImage, setPlotImage] = useState(null);
@@ -112,14 +112,18 @@ const GraphContainer = () => {
 
   return (
     <div>
-    <img src="Images/TestImage1.png" alt="Image of outputted graph" />
-    <ul>
+      <div>
+        <img className="GraphImage" src="Images/TestImage1.png" alt="Image of outputted graph" />
+      </div>
+      <div className="SelectInputs">
+    <ul className="LocationList">
       <LocationList locationData={locationData} createGraphWithLocation={createGraphWithLocation}/>
     </ul>
-    <ul>
+    <ul className="RegionList">
       <RegionList regions={regions} createGraphWithRegion={createGraphWithRegion}/>
     </ul>
       <PlotByRegionButton createGraphAllLocationsByRegion={createGraphAllLocationsByRegion}/>
+      </div>
       <GraphInputForm createGraph={createGraph}/>
     </div>
   );
