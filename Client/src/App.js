@@ -8,13 +8,14 @@ import './App.css';
 
 function App() {
   return (
-      <Router>
-          <NavBar/>
-          <Routes>
-            <Route path="/data-plotting" element={< GraphContainer />} />
-            <Route path="/resource-calculator" element={< ResCalcContainer />} />
-          </Routes>
-      </Router>
+    <Router>
+      <NavBar/>
+      <Routes>
+        <Route path="/data-plotting" element={< GraphContainer />} />
+        <Route path="/resource-calculator" element={< ResCalcContainer />} />
+      </Routes>
+    </Router>
+
   );
 }
 

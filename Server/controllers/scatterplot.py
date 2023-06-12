@@ -6,13 +6,13 @@ import numpy as np
 def createScatterPlot(input_array):
     plt.clf()
     plt.cla()
-    colors = np.array(["red","green","blue","magenta","orange","black","purple","beige","brown","gray","cyan","yellow","pink"])
+    colors = np.array(["red","magenta","blue","green","orange","black","purple","beige","brown","gray","cyan","yellow","pink"])
     regions = []
     counter = 0
     for array in input_array:
         temperature_list = np.array(array[0])
         depth_list = np.array(array[1])
-        scatter = plt.scatter(temperature_list, depth_list, c=colors[counter])
+        scatter = plt.scatter(temperature_list, depth_list, c=colors[counter], label=array[2])
         regions.append(array[2])
         counter += 1
 
@@ -22,7 +22,7 @@ def createScatterPlot(input_array):
         name_for_title = f'{regions[0]}: Temperature vs. Depth'
 
     # plt.title('Temperature vs. Depth', fontsize=15, fontweight='bold')
-    plt.title(f'{name_for_title}', fontsize=15, fontweight='bold')
+    plt.title(f'{name_for_title}', fontsize=14, fontweight='bold')
     plt.xlabel('Temperature (degrees c)', fontsize=15, fontweight='bold', labelpad=5)
     plt.ylabel('Depth (m)', fontsize=15, fontweight='bold', labelpad=5)
     
@@ -36,5 +36,6 @@ def createScatterPlot(input_array):
     ax.set_ylim((0,3000))
     ax.set_xlim((0,100))
     ax.invert_yaxis()
-    plt.savefig('/Users/andrewdyson/Documents/Study/Codeclan_work/Capstone_Project/Project_Code/geothermal_energy_app/Client/public/Images/TestImage1.png')
+    plt.legend(loc="lower left")
+    plt.savefig('/Users/andrewdyson/Documents/Study/Codeclan_work/Capstone_Project/Project_Code/geothermal_energy_app/Client/public/Images/TestImage1.png', dpi = 300)
     # # plt.show()

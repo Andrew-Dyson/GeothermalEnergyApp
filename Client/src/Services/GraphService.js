@@ -9,7 +9,7 @@ const GraphService = {
     addGraph(graphData){
         // console.log("create graph")
         // console.log(graphData)
-        return fetch('http://127.0.0.1:5000/data', {
+        return fetch('http://127.0.0.1:5000//data/userdata', {
             method: 'POST',
             body: JSON.stringify(graphData),
             headers: {

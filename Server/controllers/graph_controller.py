@@ -12,19 +12,27 @@ import repositories.depth_repository as depth_repository
 
 graph_blueprint = Blueprint("data", __name__)
 
-# @graph_blueprint.route('/graphdata')
-# def get_graph():
-#     print(f"request received")
-#     return {"image": "TestImage1.png"}
+@graph_blueprint.route('/graphdata')
+def get_graph():
+    print(f"request received")
+    return {"image": "TestImage1.png"}
 
-@graph_blueprint.route('/data', methods=['POST'])
+@graph_blueprint.route('/data/userdata', methods=['POST'])
 def create_graph():
     print(request.json["name"])
+    user_location_input_array = []
+    user_temperature_list = []
+    user_depth_list = []
     name = request.json["name"]
     region = request.json["region"]
     temperature = int(request.json["temperature"])
     value = int(request.json["depth"])
-    createScatterPlot(temperature, value)
+    user_temperature_list.append(temperature)
+    user_depth_list.append(value)
+    user_location_input_array.append(user_temperature_list)
+    user_location_input_array.append(user_depth_list)
+    user_location_input_array.append(region)
+    createScatterPlot([user_location_input_array])
     location = Location(name, region)
     location_saved = location_repository.save(location)
     depth = Depth(value, temperature, location_saved.id)
@@ -57,6 +65,7 @@ def get_all_location_data():
             "location_name": location_object.name,
             "region": location_object.region}
         )
+    print("location request received")
     return locations
 
 @graph_blueprint.route('/data/locations/location', methods=['POST'])
@@ -84,8 +93,6 @@ def get_specific_region_data():
 @graph_blueprint.route('/data/locations/alllocationsbyregion', methods=['POST'])
 def get_all_locations_by_region():
     list_of_region_objects = request.json
-    # print(list_of_region_objects)
-    
     all_regions_input_array = []
     for region in list_of_region_objects:
         region_input_array = []
@@ -97,7 +104,7 @@ def get_all_locations_by_region():
         region_input_array.append(region['name'])
         all_regions_input_array.append(region_input_array)
     
-    # print(all_regions_input_array)
+    print(all_regions_input_array)
 
     createScatterPlot(all_regions_input_array)
     

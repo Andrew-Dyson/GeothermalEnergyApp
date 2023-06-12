@@ -5,12 +5,14 @@ import ResourceCalcOutput from '../Components/ResourceCalcOutput';
 
 const ResCalcContainer = () => {
     const [heatInPlaceCalcResult, setHeatInPlaceCalcResult] = useState(null);
+    const [recoverableHeatCalcResult, setRecoverableHeatCalcResult] = useState(null);
     const [energyDemand, setEnergyDemand] = useState(null);
     const [difference, setDifference] = useState(null);
 
 
-    const calculateHeatInPlace = (variables_object) => {
-        let result = 0
+    const calculateResources = (variables_object) => {
+        let heat_in_place = 0
+        let recoverable_heat = 0
         let thickness = 0
         let area = 0
         let porosity = 0
@@ -19,6 +21,7 @@ const ResCalcContainer = () => {
         let fluidSpecificHeatCapacity = 0
         let rockSpecificHeatCapacity = 0
         let reservoirTemperature = 0
+        let recoveryFactor = 0
 
         let demand = 0
 
@@ -30,12 +33,15 @@ const ResCalcContainer = () => {
         fluidSpecificHeatCapacity = variables_object.fluid_specific_heat_capacity
         rockSpecificHeatCapacity = variables_object.rock_specific_heat_capacity
         reservoirTemperature = variables_object.reservoir_temperature
+        recoveryFactor = variables_object.recoveryFactor
     
         demand = variables_object.demand
 
-        result = (((area*1000000)*thickness)*(porosity*fluidSpecificDensity*fluidSpecificHeatCapacity*(1-porosity)*rockSpecificDensity*rockSpecificHeatCapacity)*reservoirTemperature)/1000
-        let difference = result - demand
-        setHeatInPlaceCalcResult(result)
+        heat_in_place = (((area*1000000)*thickness)*(porosity*fluidSpecificDensity*fluidSpecificHeatCapacity*(1-porosity)*rockSpecificDensity*rockSpecificHeatCapacity)*reservoirTemperature)/1000
+        recoverable_heat = heat_in_place*recoveryFactor
+        let difference = recoverable_heat - demand
+        setHeatInPlaceCalcResult(heat_in_place)
+        setRecoverableHeatCalcResult(recoverable_heat)
         setEnergyDemand(demand)
         setDifference(difference)
     }
@@ -43,9 +49,10 @@ const ResCalcContainer = () => {
     return(
         <div>
         <ResourceCalcInput 
-        calculateHeatInPlace={calculateHeatInPlace}/>
+        calculateResources={calculateResources}/>
         <ResourceCalcOutput 
         heatInPlaceCalcResult={heatInPlaceCalcResult}
+        recoverableHeatCalcResult={recoverableHeatCalcResult}
         energyDemand={energyDemand}
         difference={difference}
         />

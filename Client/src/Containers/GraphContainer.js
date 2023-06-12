@@ -36,23 +36,23 @@ const GraphContainer = () => {
 
   const getRegions = () => {
     const inputted_regions = [{
-      name: "Caithness",
+      name: "Caithness, Scotland",
       region_id: 1
     }, 
     {
-      name: "East_Grampians",
+      name: "East Grampians, Scotland",
       region_id: 2
     }, 
     {
-      name: "West_Midland_Valley",
+      name: "Western Central Belt, Scotland",
       region_id: 3
     }, 
     {
-      name: "East_Midland_Valley",
+      name: "Eastern Central Belt, Scotland",
       region_id: 4
     },
     {
-      name: "Dumfries_and_Galloway",
+      name: "Dumfries and Galloway, Scotland",
       region_id: 5
     }]
     // let location
