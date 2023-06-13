@@ -19,7 +19,7 @@ const handleRegionSelect = (ev) => {
 
     return(
         <div>
-        <select className="InputItem" onChange={handleRegionSelect}>{regionItems}</select>
+        <select className="RegionDropdownItem" onChange={handleRegionSelect}>{regionItems}</select>
         </div>
     )
 }

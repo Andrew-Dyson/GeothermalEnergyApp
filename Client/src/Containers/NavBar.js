@@ -6,7 +6,7 @@ const NavBar = () => {
 
   return (
     <div className="NavBar">
-    <h1>GeothermViewer</h1>
+    <h1>GeothermalEnergyViewer</h1>
     <ul>
       <li>
         <Link className="NavLink" to="/data-plotting">Data Plotting</Link>

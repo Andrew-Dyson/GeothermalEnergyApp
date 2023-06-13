@@ -17,12 +17,12 @@ const handleLocationSelect = (ev) => {
         location_id: ev.target.value, 
     })
 
-
 }
 
     return(
         <div>
-        <select className="InputItem" onChange={handleLocationSelect}>{locationItems}</select>
+        <select className="LocationDropdownItem" onChange={handleLocationSelect}>{locationItems}
+        </select>
         </div>
     )
 }

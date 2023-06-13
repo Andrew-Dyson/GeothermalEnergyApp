@@ -112,7 +112,8 @@ const GraphContainer = () => {
 
   return (
     <div>
-      <div>
+      <div className="UserInputsAndGraph">
+        <GraphInputForm createGraph={createGraph}/>
         <img className="GraphImage" src="Images/TestImage1.png" alt="Image of outputted graph" />
       </div>
       <div className="SelectInputs">
@@ -124,7 +125,6 @@ const GraphContainer = () => {
     </ul>
       <PlotByRegionButton createGraphAllLocationsByRegion={createGraphAllLocationsByRegion}/>
       </div>
-      <GraphInputForm createGraph={createGraph}/>
     </div>
   );
 }

@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './GraphInputForm.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
+import { faCircleArrowDown } from '@fortawesome/free-solid-svg-icons'
+
 
 
 const GraphInputForm = ({createGraph}) => {
@@ -38,25 +42,29 @@ const GraphInputForm = ({createGraph}) => {
 
   return (
     <div>
+        <div className="UserInputslabel">
+        <p>Input Data</p>
+        <FontAwesomeIcon icon={faCircleArrowDown } size="xl" className="DownArrow"/>
+        </div>
       <form className="UserGraphInputs">
         <div className="InputItem">
-        <label htmlFor="name">Location name:</label>
-        <input  type="text" id="name" onChange={handleNameChange}/>
+        <label htmlFor="name">Location</label>
+        <input className="InputField" type="text" id="name" onChange={handleNameChange}/>
         </div>
         <div className="InputItem">
-        <label htmlFor="elevation">Region:</label>
-        <input  type="text" id="region" onChange={handleRegionChange}/>
+        <label htmlFor="elevation">Region</label>
+        <input className="InputField" type="text" id="region" onChange={handleRegionChange}/>
         </div>
         <div className="InputItem">
-        <label htmlFor="temperature">Temperature:</label>
-        <input  type="text" id="temperature" onChange={handleTempChange}/>
+        <label htmlFor="temperature" >Temperature</label>
+        <input className="InputField" type="text" id="temperature" onChange={handleTempChange}/>
         </div>
         <div className="InputItem">
-        <label htmlFor="depth">Depth:</label>
-        <input  type="text" id="depth" onChange={handleDepthChange}/>
+        <label htmlFor="depth">Depth</label>
+        <input className="InputField" type="text" id="depth" onChange={handleDepthChange}/>
         </div>
-        <div className="InputItem">
-        <input type="button" name="submit" value="Create Graph" onClick={handleSubmit}/>
+        <div >
+        <input className="UserInputButton" type="button" name="submit" value="Create Graph" onClick={handleSubmit}/>
         </div>
       </form>
     </div>

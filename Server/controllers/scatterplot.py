@@ -17,7 +17,7 @@ def createScatterPlot(input_array):
         counter += 1
 
     if len(regions) > 1:
-        name_for_title = "All locations grouped by region: temperature vs. depth"  
+        name_for_title = "All locations coloured by region: temperature vs. depth"  
     else:
         name_for_title = f'{regions[0]}: Temperature vs. Depth'
 

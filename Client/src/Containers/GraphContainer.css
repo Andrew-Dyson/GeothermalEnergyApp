@@ -21,3 +21,8 @@
     width: 50%;
 }
 
+.UserInputsAndGraph {
+    display: flex;
+    flex-direction: row;
+
+}

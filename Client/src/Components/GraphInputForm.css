@@ -5,25 +5,98 @@
     margin-right: auto;
     width: 70%;
     display: flex;
+    flex-direction: column;
     }
 
 .InputItem {
-    background-color: white;
+    background-color: rgb(207, 60, 60);
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
     padding: 5px;
-    height: 40px;
-    width: 150px;
+    height: 80px;
+    width: 220px;
+    border: none;
     opacity: 1;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 15px rgb(0, 0, 0);
     border-radius: 10px;
     justify-content: center;
+    margin: 12px;
 }
 
 .InputItem > input {
     margin-top: -20px
-    
 }
 
 .InputItem > label {
     margin-top: -20px
-    
+}
+
+.InputField {
+    background-color: rgb(207, 60, 60);
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 1px;
+    height: 30px;
+    width: 200px;
+    border-color: white;
+    border-style: solid;
+    opacity: 1;
+    border-radius: 5px;
+    border-width: 2px;
+}
+
+.UserInputButton {
+    background-color: rgb(207, 60, 60);
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 5px;
+    height: 50px;
+    width: 220px;
+    border: none;
+    opacity: 1;
+    box-shadow: 0px 0px 15px rgb(0, 0, 0);
+    border-radius: 10px;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.UserInputslabel {
+    background-color: rgb(207, 60, 60);
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 5px;
+    height: 40px;
+    width: 250px;
+    border: none;
+    opacity: 1;
+    box-shadow: 0px 0px 15px rgb(0, 0, 0);
+    border-radius: 10px;
+    justify-content: center;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.UserInputslabel > p {
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+    padding: 5px;
+    height: 40px;
+    width: 220px;
+    border: none;
+    justify-content: center;
+    margin-left: 5px;
+    margin-top: -5px;
+}
+
+.DownArrow {
+    color: white;
+    height: 35px;
+    margin-right: 10px;
 }
