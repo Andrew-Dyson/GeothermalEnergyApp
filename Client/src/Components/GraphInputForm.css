@@ -15,7 +15,7 @@
     font-size: 30px;
     padding: 5px;
     height: 80px;
-    width: 220px;
+    width: 240px;
     border: none;
     opacity: 1;
     box-shadow: 0px 0px 15px rgb(0, 0, 0);
@@ -32,20 +32,30 @@
     margin-top: -20px
 }
 
-.InputField {
+.InputField[type=text] {
     background-color: rgb(207, 60, 60);
     color: white;
     font-weight: bold;
     font-size: 30px;
     padding: 1px;
     height: 30px;
-    width: 200px;
+    width: 220px;
     border-color: white;
     border-style: solid;
     opacity: 1;
     border-radius: 5px;
     border-width: 2px;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px rgb(207, 60, 60) inset !important;
+    -webkit-text-fill-color: #ffffff;
+}
+
+
 
 .UserInputButton {
     background-color: rgb(207, 60, 60);

@@ -3,6 +3,8 @@ import ResourceCalcInput from '../Components/ResourceCalcInput';
 import ResourceCalcOutput from '../Components/ResourceCalcOutput';
 
 
+
+
 const ResCalcContainer = () => {
     const [heatInPlaceCalcResult, setHeatInPlaceCalcResult] = useState(null);
     const [recoverableHeatCalcResult, setRecoverableHeatCalcResult] = useState(null);
@@ -27,7 +29,7 @@ const ResCalcContainer = () => {
 
         thickness = variables_object.thickness
         area = variables_object.area
-        porosity = variables_object.porosity
+        porosity = (variables_object.porosity/100)
         fluidSpecificDensity = variables_object.fluid_specific_density
         rockSpecificDensity = variables_object.rock_specific_density
         fluidSpecificHeatCapacity = variables_object.fluid_specific_heat_capacity
@@ -37,13 +39,16 @@ const ResCalcContainer = () => {
     
         demand = variables_object.demand
 
-        heat_in_place = (((area*1000000)*thickness)*(porosity*fluidSpecificDensity*fluidSpecificHeatCapacity*(1-porosity)*rockSpecificDensity*rockSpecificHeatCapacity)*reservoirTemperature)/1000
+        heat_in_place = ((((area*1000000)*thickness)*(porosity*fluidSpecificDensity*fluidSpecificHeatCapacity*(1-porosity)*rockSpecificDensity*rockSpecificHeatCapacity)*reservoirTemperature)/1000)/1000000
+        const heatInPlaceNoDecimal = Math.trunc(heat_in_place) 
         recoverable_heat = heat_in_place*recoveryFactor
-        let difference = recoverable_heat - demand
-        setHeatInPlaceCalcResult(heat_in_place)
-        setRecoverableHeatCalcResult(recoverable_heat)
+        const recoverableHeatNoDecimal = Math.trunc(recoverable_heat)
+        const difference = recoverableHeatNoDecimal - demand
+        const differenceNoDecimal = Math.trunc(difference)
+        setHeatInPlaceCalcResult(heatInPlaceNoDecimal)
+        setRecoverableHeatCalcResult(recoverableHeatNoDecimal)
         setEnergyDemand(demand)
-        setDifference(difference)
+        setDifference(differenceNoDecimal)
     }
 
     return(

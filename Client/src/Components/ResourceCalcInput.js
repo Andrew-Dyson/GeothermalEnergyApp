@@ -114,7 +114,7 @@ const ResourceCalcInput = ({calculateResources}) => {
             <input className="CalcInputField" type="text" id="recovery_factor" onChange={handleRecFacChange}/>
             </div>
             <div className="CalcInputItem">
-            <label htmlFor="demand">Demand (kilojoules) </label>
+            <label htmlFor="demand">Demand (gigajoules) </label>
             <input className="CalcInputField" type="text" id="demand" onChange={handleDemandChange}/>
             </div>
         </div>
