@@ -7,10 +7,9 @@ const ResourceCalcOutput = ({heatInPlaceCalcResult, energyDemand, difference, re
 
     return(
         <div className="UserCalcOutputs">
-        <p className="CalcOutputItem"> Heat in place: {heatInPlaceCalcResult} kilojoules</p>
-        <p className="CalcOutputItem"> Recoverable Heat: {recoverableHeatCalcResult} kilojoules</p>
-        <p className="CalcOutputItem"> Energy demand: {energyDemand} kilojoules</p>
-        <p className="CalcOutputItem"> Difference: {difference} kilojoules</p>
+        <p className="CalcOutputItem"> Heat in place: {heatInPlaceCalcResult} kj</p>
+        <p className="CalcOutputItem"> Recoverable Heat: {recoverableHeatCalcResult} kj</p>
+        <p className="CalcOutputItem"> Difference: {difference} kj</p>
         </div>
     )
 

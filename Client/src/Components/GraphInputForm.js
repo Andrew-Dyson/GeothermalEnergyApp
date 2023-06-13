@@ -64,7 +64,7 @@ const GraphInputForm = ({createGraph}) => {
         <input className="InputField" type="text" id="depth" onChange={handleDepthChange}/>
         </div>
         <div >
-        <input className="UserInputButton" type="button" name="submit" value="Create Graph" onClick={handleSubmit}/>
+        <input className="UserInputButton" type="button" name="submit" value="Get Graph" onClick={handleSubmit}/>
         </div>
       </form>
     </div>

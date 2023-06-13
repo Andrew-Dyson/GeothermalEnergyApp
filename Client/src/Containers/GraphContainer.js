@@ -6,6 +6,8 @@ import LocationList from '../Components/LocationList';
 import RegionList from '../Components/RegionList';
 import PlotByRegionButton from '../Components/PlotByRegionButton';
 import './GraphContainer.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 const GraphContainer = () => {
   const [plotImage, setPlotImage] = useState(null);
@@ -112,21 +114,31 @@ const GraphContainer = () => {
 
   return (
     <div>
+    
       <div className="UserInputsAndGraph">
-        <GraphInputForm createGraph={createGraph}/>
-        <img className="GraphImage" src="Images/TestImage1.png" alt="Image of outputted graph" />
+          
+          <GraphInputForm createGraph={createGraph}/>
+          <div className="GraphParent">
+          <img className="GraphImage" src="Images/TestImage1.png" alt="Image of outputted graph" />
+          </div>
       </div>
-      <div className="SelectInputs">
-    <ul className="LocationList">
-      <LocationList locationData={locationData} createGraphWithLocation={createGraphWithLocation}/>
-    </ul>
-    <ul className="RegionList">
-      <RegionList regions={regions} createGraphWithRegion={createGraphWithRegion}/>
-    </ul>
-      <PlotByRegionButton createGraphAllLocationsByRegion={createGraphAllLocationsByRegion}/>
+      <div className="FilterLabelAndInputs">
+          <div className="FilterDatalabel">
+              <p>Filter data</p>
+              <FontAwesomeIcon icon={faCircleArrowDown } size="xl" className="DownArrow"/>
+          </div>
+          <div className="SelectInputs">
+              <ul className="LocationList">
+                <LocationList locationData={locationData} createGraphWithLocation={createGraphWithLocation}/>
+              </ul>
+              <ul className="RegionList">
+                <RegionList regions={regions} createGraphWithRegion={createGraphWithRegion}/>
+              </ul>
+                <PlotByRegionButton createGraphAllLocationsByRegion={createGraphAllLocationsByRegion}/>
+          </div>
       </div>
     </div>
   );
 }
 
-export default GraphContainer;
+export default GraphContainer;  
