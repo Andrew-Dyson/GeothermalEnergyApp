@@ -119,7 +119,7 @@ const GraphContainer = () => {
           
           <GraphInputForm createGraph={createGraph}/>
           <div className="GraphParent">
-          <img className="GraphImage" src="Images/TestImage1.png" alt="Image of outputted graph" />
+          <img className="GraphImage" src="Images/TestImage1.png" alt="Graph showing temperature vs depth data points" />
           </div>
       </div>
       <div className="FilterLabelAndInputs">

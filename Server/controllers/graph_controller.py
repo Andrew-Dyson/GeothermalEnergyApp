@@ -73,7 +73,7 @@ def get_specific_location_data():
     print(request.json["location_id"])
     location_id = request.json["location_id"]
     depth_data = depth_repository.select_by_location_id(location_id)
-    createScatterPlot([[int(depth_data.temperature), int(depth_data.value), depth_data.location.name]])
+    createScatterPlot([[[int(depth_data.temperature)], [int(depth_data.value)], depth_data.location.name]])
     # return depth_data.location.name
     return {"message": "location request received"}
    
