@@ -84,7 +84,7 @@ const ResourceCalcInput = ({calculateResources}) => {
             <input className="CalcInputField" type="text" id="area" onChange={handleAreaChange}/>
             </div>
             <div className="CalcInputItem">
-            <label htmlFor="porosity">Porosity (dec) </label>
+            <label htmlFor="porosity">Porosity (%) </label>
             <input className="CalcInputField" type="text" id="porosity" onChange={handlePorosityChange}/>
             </div>
             <div className="CalcInputItem">

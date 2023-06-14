@@ -59,5 +59,6 @@ def createScatterPlot(input_array):
     
     ax.invert_yaxis()
     plt.legend(loc="lower left")
+    plt.text(73, 2950, "Data source: BGS")
     plt.savefig('/Users/andrewdyson/Documents/Study/Codeclan_work/Capstone_Project/Project_Code/geothermal_energy_app/Client/public/Images/TestImage1.png', dpi = 300)
     # plt.show()
