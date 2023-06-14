@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ResourceCalcOutput.css'
 
-const ResourceCalcOutput = ({heatInPlaceCalcResult, energyDemand, difference, recoverableHeatCalcResult}) => {
+const ResourceCalcOutput = ({heatInPlaceCalcResult, difference, recoverableHeatCalcResult}) => {
 
 
 

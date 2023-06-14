@@ -2,73 +2,26 @@ import React, { useState, useEffect } from 'react';
 import './ResourceCalcInput.css'
 
 
-const ResourceCalcInput = ({calculateResources}) => {
-     const [thickness, setThickness] = useState(null);
-     const [area, setArea] = useState(null);
-     const [porosity, setPorosity] = useState(null);
-     const [fluidSpecificDensity, setFluidSpecificDensity] = useState(null);
-     const [rockSpecificDensity, setRockSpecificDensity] = useState(null);
-     const [fluidSpecificHeatCapacity, setFluidSpecificHeatCapacity] = useState(null);
-     const [rockSpecificHeatCapacity, setRockSpecificHeatCapacity] = useState(null);
-     const [reservoirTemperature, setReservoirTemperature] = useState(null);
-     const [recoveryFactor, setRecoveryFactor] = useState(null);
-     const [demand, setDemand] = useState(null);
+const ResourceCalcInput = ({handleThicknessChange, handleAreaChange, handlePorosityChange, handleFlSpecDenChange, handleRockSpecDenChange, handleFlSpecHeatCapChange, handleRockSpecHeatCapChange, handleResTempChange, handleRecFacChange, handleDemandChange}) => {
+     
 
-    const handleThicknessChange = (ev) => {
-        setThickness(ev.target.value)
-    }
 
-    const handleAreaChange = (ev) => {
-        setArea(ev.target.value)
-    }
 
-    const handlePorosityChange = (ev) => {
-        setPorosity(ev.target.value)
-    }
+    // const handleSubmit = (ev) => {
+    //     calculateResources({
+    //         thickness: thickness, 
+    //         area: area,
+    //         porosity: porosity,
+    //         fluid_specific_density: fluidSpecificDensity,
+    //         rock_specific_density: rockSpecificDensity,
+    //         fluid_specific_heat_capacity: fluidSpecificHeatCapacity,
+    //         rock_specific_heat_capacity: rockSpecificHeatCapacity,
+    //         reservoir_temperature: reservoirTemperature,
+    //         demand: demand,
+    //         recoveryFactor: recoveryFactor
 
-    const handleFlSpecDenChange = (ev) => {
-        setFluidSpecificDensity(ev.target.value)
-    }
-
-    const handleRockSpecDenChange = (ev) => {
-        setRockSpecificDensity(ev.target.value)
-    }
-
-    const handleFlSpecHeatCapChange = (ev) => {
-        setFluidSpecificHeatCapacity(ev.target.value)
-    }
-
-    const handleRockSpecHeatCapChange = (ev) => {
-        setRockSpecificHeatCapacity(ev.target.value)
-    }
-
-    const handleResTempChange = (ev) => {
-        setReservoirTemperature(ev.target.value)
-    }
-
-    const handleRecFacChange = (ev) => {
-        setRecoveryFactor(ev.target.value)
-    }
-
-    const handleDemandChange = (ev) => {
-        setDemand(ev.target.value)
-    }
-
-    const handleSubmit = (ev) => {
-        calculateResources({
-            thickness: thickness, 
-            area: area,
-            porosity: porosity,
-            fluid_specific_density: fluidSpecificDensity,
-            rock_specific_density: rockSpecificDensity,
-            fluid_specific_heat_capacity: fluidSpecificHeatCapacity,
-            rock_specific_heat_capacity: rockSpecificHeatCapacity,
-            reservoir_temperature: reservoirTemperature,
-            demand: demand,
-            recoveryFactor: recoveryFactor
-
-        })
-    }
+    //     })
+    // }
 
     return(
         <>
@@ -119,9 +72,9 @@ const ResourceCalcInput = ({calculateResources}) => {
             </div>
         </div>
         </div>
-            <div>
+            {/* <div>
                 <input className="CalcInputButton" type="button" name="submit" value="Calculate" onClick={handleSubmit}/>
-            </div>
+            </div> */}
         </form>
         </>
     )
