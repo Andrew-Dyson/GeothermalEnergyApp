@@ -34,41 +34,46 @@ const GraphContainer = () => {
 
   useEffect(() => {
     setRegions(getRegions())
-  }, [])
+  }, [locationData])
 
   const getRegions = () => {
-    const inputted_regions = [{
-      name: "Caithness, Scotland",
-      region_id: 1
-    }, 
-    {
-      name: "East Grampians, Scotland",
-      region_id: 2
-    }, 
-    {
-      name: "Western Central Belt, Scotland",
-      region_id: 3
-    }, 
-    {
-      name: "Eastern Central Belt, Scotland",
-      region_id: 4
-    },
-    {
-      name: "Dumfries and Galloway, Scotland",
-      region_id: 5
-    }]
-    // let location
-    // for (location in locationData)
+    // Hard coded inputs
+    // const inputted_regions = [{
+    //   name: "Caithness, Scotland",
+    //   region_id: 1
+    // }, 
     // {
-    //   let region
-    //   let counter = 0
-    //   for ( region in regions) {
-    //     if (region === location.region)
-    //     counter += 1
-    //   }
-    //   {regions.push(location.region)}
-    // }
-    return inputted_regions
+    //   name: "East Grampians, Scotland",
+    //   region_id: 2
+    // }, 
+    // {
+    //   name: "Western Central Belt, Scotland",
+    //   region_id: 3
+    // }, 
+    // {
+    //   name: "Eastern Central Belt, Scotland",
+    //   region_id: 4
+    // },
+    // {
+    //   name: "Dumfries and Galloway, Scotland",
+    //   region_id: 5
+    // }]
+
+    var locations = locationData
+    var regions_counter = []
+    var regions_unique = []
+    for( let i = 0; i < locations.length; i++ ){
+    if( !regions_counter[locations[i].region]){
+    regions_unique.push({
+      name: locations[i].region,
+      region_id: i
+    })
+    regions_counter[locations[i].region] = 1
+  }
+}
+  console.log(regions_unique)
+  return regions_unique
+    // return inputted_regions
   }
 
   function createGraph(geoData) {
@@ -80,14 +85,14 @@ const GraphContainer = () => {
     .then(data => console.log(data.image))
     }
 
-    function createGraphWithLocation(geoData) {
-      GraphService.addGraphWithLocation(geoData)
-      .then(data => {
-        console.log(data)
-        // setPlotImage(data.image)
-      })
-      .then(data => console.log(data))
-      }
+  function createGraphWithLocation(geoData) {
+    GraphService.addGraphWithLocation(geoData)
+    .then(data => {
+      console.log(data)
+      // setPlotImage(data.image)
+    })
+    .then(data => console.log(data))
+    }
 
 
   function createGraphAllLocationsByRegion() {
