@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 
-const Graph = ({plotImage, data}) => {
+// const Graph = ({plotImage, data}) => {
 
-    const createImagePath = (inputImage) => {
-        const imagePath = "Images/" + inputImage
-        return imagePath
-    }
+//     const createImagePath = (inputImage) => {
+//         const imagePath = "Images/" + inputImage
+//         return imagePath
+//     }
 
-  return (
-    <div>
-      {/* <img src={createImagePath(plotImage)} alt="" /> */}
+//   return (
+//     <div>
+//       {/* <img src={createImagePath(plotImage)} alt="" /> */}
       
-      {/* {data} */}
-    </div>
-  );
-}
+//       {/* {data} */}
+//     </div>
+//   );
+// }
 
-export default Graph;
+// export default Graph;

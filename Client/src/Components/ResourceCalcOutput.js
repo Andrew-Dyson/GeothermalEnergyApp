@@ -9,7 +9,7 @@ const ResourceCalcOutput = ({heatInPlaceCalcResult, difference, recoverableHeatC
         <div className="UserCalcOutputs">
         <p className="CalcOutputItem"> Heat in place: {heatInPlaceCalcResult} Gj</p>
         <p className="CalcOutputItem"> Recoverable Heat: {recoverableHeatCalcResult} Gj</p>
-        <p className="CalcOutputItem"> Difference: {difference} Gj</p>
+        <p className="CalcOutputItem"> Surplus: {difference} Gj</p>
         </div>
     )
 

@@ -1,5 +1,4 @@
 import matplotlib
-# matplotlib.use('agg')
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -30,14 +29,6 @@ def createScatterPlot(input_array):
         W[-1,-1] = 1000.
         m, c = np.linalg.lstsq(np.dot(W, A), np.dot(W, depth_list_for_regression), rcond=None)[0]
         plt.plot(temperature_list_for_regression, m * temperature_list_for_regression + c, colors[counter])
-        # p1 = np.polyfit(temperature_array_for_regression, depth_array_for_regression, 1)
-        # plt.plot(temperature_list, b + m * temperature_list, '-')
-        # xlims = plt.xlim()
-        # temperature_array_for_regression.insert(10, xlims[0])
-        # depth_array_for_regression.insert(0, np.polyval(p1, xlims[0]))
-        # temperature_array_for_regression.append(xlims[1])
-        # depth_array_for_regression.append(np.polyval(p1, xlims[1]))
-        # plt.plot(temperature_array_for_regression, np.polyval(p1,temperature_array_for_regression), colors[counter], linewidth = 2)
         regions.append(array[2])
         counter += 1
 
@@ -46,7 +37,6 @@ def createScatterPlot(input_array):
     else:
         name_for_title = f'{regions[0]}: Temperature vs. Depth'
 
-    # plt.title('Temperature vs. Depth', fontsize=15, fontweight='bold')
     plt.title(f'{name_for_title}', fontsize=14, fontweight='bold')
     plt.xlabel('Temperature (' + '\u00b0' + 'C)', fontsize=15, fontweight='bold', labelpad=5)
     plt.ylabel('Depth (m)', fontsize=15, fontweight='bold', labelpad=5)
@@ -54,7 +44,6 @@ def createScatterPlot(input_array):
     plt.grid()
     plt.xscale("linear")
     plt.yscale("linear")
-    # plt.plot([10, 85],[0, 3000])
     
     
     ax.invert_yaxis()

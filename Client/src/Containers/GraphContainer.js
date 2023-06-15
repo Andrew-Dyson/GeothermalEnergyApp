@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Graph from '../Components/Graph';
+// import Graph from '../Components/Graph';
 import GraphInputForm from '../Components/GraphInputForm';
 import GraphService from '../Services/GraphService';
 import LocationList from '../Components/LocationList';
@@ -71,7 +71,7 @@ const GraphContainer = () => {
     regions_counter[locations[i].region] = 1
   }
 }
-  console.log(regions_unique)
+  // console.log(regions_unique)
   return regions_unique
     // return inputted_regions
   }
@@ -82,7 +82,8 @@ const GraphContainer = () => {
       console.log(data)
       // setPlotImage(data.image)
     })
-    .then(data => console.log(data.image))
+    // .then(data => console.log(data.image))
+    .then(data => console.log("image generated"))
     }
 
   function createGraphWithLocation(geoData) {

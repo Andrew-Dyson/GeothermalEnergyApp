@@ -35,7 +35,8 @@ def create_graph():
     createScatterPlot([user_location_input_array])
     location = Location(name, region)
     location_saved = location_repository.save(location)
-    depth = Depth(value, temperature, location_saved.id)
+    depth = Depth(value, temperature, location_saved)
+    print(location.id)
     depth_repository.save(depth)
     return {"image": "TestImage1.png"}
     # return redirect("/graphdata")
@@ -104,7 +105,7 @@ def get_all_locations_by_region():
         region_input_array.append(region['name'])
         all_regions_input_array.append(region_input_array)
     
-    print(all_regions_input_array)
+    # print(all_regions_input_array)
 
     createScatterPlot(all_regions_input_array)
     
