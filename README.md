@@ -1,4 +1,4 @@
-##Geothermal Energy App - Codeclan course final project
+# Geothermal Energy App - Codeclan course final project
 
 This app was created for an individual two week final project for Codeclan's professional software development course. It uses the following stack:
 - JavaScript for frontend with React.js and node.js
