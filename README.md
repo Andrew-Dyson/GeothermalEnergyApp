@@ -21,7 +21,7 @@ Instructions for running
 Data plotting page
 - This page allows users to view temperature vs. depth data on a scatter plot in order to analyse the geothermal gradient of an area of interest. The data can be filtered by location and region, or new data added.
 
-![alt text]([Resource_calculator_page.jpg](https://github.com/Andrew-Dyson/GeothermalEnergyApp/blob/main/Images/Data_plotting_page.jpg))
+![alt text]([Resource_calculator_page.jpg](https://github.com/Andrew-Dyson/GeothermalEnergyApp/blob/main/Images/Data_plotting_page.jpg?raw=true))
 
 Resource calculator page
 - This page allows users to calculate the geothermal heat in place under the subsurface and the amount of recoverable heat. This is compared to the energy demand inputted and the difference is displayed. The user can alter the inputs on the fly to see the impact of varying each parameter.
