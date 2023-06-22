@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './GraphInputForm.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import { faCircleArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 
@@ -14,17 +13,12 @@ const GraphInputForm = ({createGraph}) => {
     
 
     const handleSubmit = (ev) => {
-        // ev.preventDefault();
         createGraph({
             name: name, 
             region: region,
             temperature: temperature,
             depth: depth
         })
-        // setLocation("");
-        // setElevation("")
-        // setTemperature("");
-        // setDepth("");
     }
 
     const handleNameChange = (ev) => {

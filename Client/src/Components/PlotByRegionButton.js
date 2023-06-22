@@ -5,7 +5,6 @@ const PlotByRegionButton = ({createGraphAllLocationsByRegion}) => {
     
 
     const handleSubmit = (ev) => {
-        // ev.preventDefault();
         createGraphAllLocationsByRegion()
     }
 

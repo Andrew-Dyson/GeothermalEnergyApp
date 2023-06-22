@@ -1,4 +1,3 @@
-import Graph from './Graph';
 import RegionItem from './RegionItem';
 import './RegionList.css'
 

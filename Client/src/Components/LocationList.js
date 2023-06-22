@@ -1,4 +1,3 @@
-import Graph from './Graph';
 import LocationItem from './LocationItem';
 import './LocationList.css'
 

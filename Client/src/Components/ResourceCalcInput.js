@@ -1,27 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './ResourceCalcInput.css'
 
 
 const ResourceCalcInput = ({handleThicknessChange, handleAreaChange, handlePorosityChange, handleFlSpecDenChange, handleRockSpecDenChange, handleFlSpecHeatCapChange, handleRockSpecHeatCapChange, handleResTempChange, handleRecFacChange, handleDemandChange}) => {
      
-
-
-
-    // const handleSubmit = (ev) => {
-    //     calculateResources({
-    //         thickness: thickness, 
-    //         area: area,
-    //         porosity: porosity,
-    //         fluid_specific_density: fluidSpecificDensity,
-    //         rock_specific_density: rockSpecificDensity,
-    //         fluid_specific_heat_capacity: fluidSpecificHeatCapacity,
-    //         rock_specific_heat_capacity: rockSpecificHeatCapacity,
-    //         reservoir_temperature: reservoirTemperature,
-    //         demand: demand,
-    //         recoveryFactor: recoveryFactor
-
-    //     })
-    // }
 
     return(
         <>

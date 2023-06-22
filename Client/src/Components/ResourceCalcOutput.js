@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './ResourceCalcOutput.css'
 
 const ResourceCalcOutput = ({heatInPlaceCalcResult, difference, recoverableHeatCalcResult}) => {
@@ -12,8 +12,6 @@ const ResourceCalcOutput = ({heatInPlaceCalcResult, difference, recoverableHeatC
         <p className="CalcOutputItem"> Surplus: {difference} Gj</p>
         </div>
     )
-
-
 }
 
 export default ResourceCalcOutput;

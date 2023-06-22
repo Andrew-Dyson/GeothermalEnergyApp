@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import Graph from '../Components/Graph';
 import GraphInputForm from '../Components/GraphInputForm';
 import GraphService from '../Services/GraphService';
 import LocationList from '../Components/LocationList';
@@ -11,15 +10,9 @@ import { faCircleArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 const GraphContainer = () => {
   const [plotImage, setPlotImage] = useState(null);
-  // const [inputData, setInputData] = useState([]);
   const [locationData, setLocationData] = useState([]);
   const [regions, setRegions] = useState([]);
 
-  // useEffect(() => {
-  //   fetch('http://127.0.0.1:5000/graphdata')
-  //     .then(res => res.json())
-  //     .then(data => setPlotImage(data.image))
-  // }, [plotImage]);
 
   useEffect(() => {
     getLocationData() 
@@ -28,7 +21,6 @@ const GraphContainer = () => {
   function getLocationData(){
     fetch('http://127.0.0.1:5000/data/locations')
     .then(res => res.json())
-    // .then(data => console.log(data))
     .then(data => setLocationData(data))
   }
 
@@ -37,27 +29,6 @@ const GraphContainer = () => {
   }, [locationData])
 
   const getRegions = () => {
-    // Hard coded inputs
-    // const inputted_regions = [{
-    //   name: "Caithness, Scotland",
-    //   region_id: 1
-    // }, 
-    // {
-    //   name: "East Grampians, Scotland",
-    //   region_id: 2
-    // }, 
-    // {
-    //   name: "Western Central Belt, Scotland",
-    //   region_id: 3
-    // }, 
-    // {
-    //   name: "Eastern Central Belt, Scotland",
-    //   region_id: 4
-    // },
-    // {
-    //   name: "Dumfries and Galloway, Scotland",
-    //   region_id: 5
-    // }]
 
     var locations = locationData
     var regions_counter = []
@@ -79,10 +50,8 @@ const GraphContainer = () => {
   function createGraph(geoData) {
     GraphService.addGraph(geoData)
     .then(data => {
-      console.log(data)
-      // setPlotImage(data.image)
+
     })
-    // .then(data => console.log(data.image))
     .then(data => console.log("image generated"))
     }
 
@@ -120,9 +89,7 @@ const GraphContainer = () => {
 
   return (
     <div>
-    
       <div className="UserInputsAndGraph">
-          
           <GraphInputForm createGraph={createGraph}/>
           <div className="GraphParent">
           <img className="GraphImage" src="Images/TestImage1.png" alt="Graph showing temperature vs depth data points" />
